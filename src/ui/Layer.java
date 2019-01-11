@@ -16,7 +16,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class Lay {
+public class Layer {
     private static final int SIZE =7;
     private static final Image IMG = new ImageIcon("graphics/window/window.png").getImage();
     private static final int IMGW = IMG.getWidth(null);
@@ -24,21 +24,21 @@ public class Lay {
     /**
      * 窗口左上角x坐标
      */
-    private int x;
+    protected int x;
     /**
      * 窗口左上角y坐标
      */
-    private int y;
+    protected int y;
     /**
      * 窗口宽度
      */
-    private int w;
+    protected int w;
     /**
      * 窗口高度
      */
-    private int h;
+    protected int h;
     
-    public Lay(int x,int y,int w,int h) {
+    public Layer(int x,int y,int w,int h) {
         this.x=x;
         this.y=y;
         this.w=w;
@@ -75,4 +75,10 @@ public class Lay {
         //right-down
         g.drawImage(IMG,x+w-SIZE,y+h-SIZE,x+w,y+h,IMGW-SIZE,IMGH-SIZE,IMGW,IMGH,null);
     }
+    /**
+     * @author 0han
+     * @param g 
+     * @see
+     */
+    public void paint(Graphics g) {}
 }

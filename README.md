@@ -17,3 +17,6 @@ MVC:Model View Control
 
 #### UI
 drawImage() method need to figure out how to use
+
+#### reflection 反射
+通过类名字符串获得类对象等等
