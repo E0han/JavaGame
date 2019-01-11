@@ -58,9 +58,7 @@ public class PanelGame extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         // refresh the graphics as a fucking crazy loop
-        for(int i =0;i<lays.size();i++) {
-           lays.get(i).paint(g);
-       }
+        for(int i =0;i<lays.size();lays.get(i++).paint(g));
         //g.drawImage(img,0,0,null);    
     }
 }

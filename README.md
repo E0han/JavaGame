@@ -20,3 +20,7 @@ drawImage() method need to figure out how to use
 
 #### reflection 反射
 通过类名字符串获得类对象等等
+
+
+###### Simplest for loop
+`for(int i =0;i<lays.size();lays.get(i++).paint(g));`
