@@ -21,7 +21,7 @@ public class FrameGame extends JFrame {
         //Default close
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Size
-        this.setSize(700,500);
+        this.setSize(600,450);
         //user can not change the size:
         this.setResizable(false);
         //æ”÷–

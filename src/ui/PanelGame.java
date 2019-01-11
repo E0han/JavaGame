@@ -18,13 +18,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class PanelGame extends JPanel {
+    private Lay[] lays = null;
     public PanelGame() {
-        
+        lays = new Lay[] {
+            new Lay(173,41,246,342),
+            new Lay(26,41,119,222),
+            new Lay(446, 41, 119,100),
+            new Lay(26,284,119,100),
+            new Lay(446,162,119,222)
+        };
     }
     @Override
     public void paintComponent(Graphics g) {
-        Image img = new ImageIcon("graphics/window/window.png").getImage();
-        //g.drawImage(img,0,0,null);
-        g.drawImage(img,0,0,64,64,0,0,16,16,null);
+        for(int i =0;i<lays.length;i++) {
+            lays[i].createWindow(g);
+        }
+        //g.drawImage(img,0,0,null);    
     }
 }
