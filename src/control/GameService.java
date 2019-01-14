@@ -23,9 +23,6 @@ public class GameService {
         GameAct act = new GameAct();
         dto.setGameact(act);
     }
-    public void gameTest() {
-        
-    }
     public void keyup() {
         // TODO Auto-generated method stub
         if(this.canMove(0,-1)) {
@@ -65,7 +62,7 @@ public class GameService {
             int newX = nowPoints[i].x + moveX;
             int newY = nowPoints[i].y + moveY;
             //TODO Ó²±àÂë
-            if(newX < 0 || newX > 9 || newY < 0 ||newY>17) {
+            if(newX < 0 || newX > 13 || newY < 0 ||newY>28) {
                 return false;
             }
         }

@@ -44,27 +44,25 @@ public class PanelGame extends JPanel {
     
     private void initLayer(){
         try {
-        GameConfig cfg = ConfigFactory.getGameConfig();
-        List<LayerConfig> layerCfg=cfg.getLayersConfig();
-        lays= new ArrayList<Layer>(layerCfg.size());
-        for(LayerConfig c : layerCfg) {
-        //反射：获得类对象
-            Class<?> cls = Class.forName(c.getClassName());
-        //获得构造函数 constructor
-            Constructor<?> ctr = cls.getConstructor( int.class, int.class, int.class, int.class);
-        //用constructor创建对象
-            Layer l = (Layer)ctr.newInstance(c.getX(), c.getY(),c.getW(),c.getH());
-            l.setDto(this.dto);
-        //将创建的layer对象放入集合
-            lays.add(l);
+            GameConfig cfg = ConfigFactory.getGameConfig();
+            List<LayerConfig> layerCfg=cfg.getLayersConfig();
+            lays= new ArrayList<Layer>(layerCfg.size());
+            for(LayerConfig c : layerCfg) {
+            //反射：获得类对象
+                Class<?> cls = Class.forName(c.getClassName());
+            //获得构造函数 constructor
+                Constructor<?> ctr = cls.getConstructor( int.class, int.class, int.class, int.class);
+            //用constructor创建对象
+                Layer l = (Layer)ctr.newInstance(c.getX(), c.getY(),c.getW(),c.getH());
+                l.setDto(this.dto);
+            //将创建的layer对象放入集合
+                lays.add(l);
             
-        }
-        }
-            catch (Exception e) {
+            }
+        }catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }
-            
+            }  
         }
      
 

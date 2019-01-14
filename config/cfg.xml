@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-	<frame title="JavaGame" windowUP="32" width="680" height="1000" padding='16' windowSize='7'>
-		<layer className="ui.LayerDisk" x="26" y="284" w="119" h="100"/>
-		<layer className="ui.LayerGame" x="414" y="32" w="334" h="590"/>
-		<layer className="ui.LayerDataBase" x="26" y="41" w="119" h="222"/>
-		<layer className="ui.LayerButton" x="446" y="41" w="119" h="100"/>
-		<layer className="ui.LayerLevel" x="446" y="162" w="119" h="222"/>
+	<frame title="JavaGame" windowUP="32" width="750" height="1000" padding='16' windowSize='7'>
+		<layer className="ui.LayerGame" x="22" y="22" w="461" h="957"/>
+		<layer className="ui.LayerLogo" x="502" y="22" w="230" h="230"/>
+		<layer className="ui.LayerScore" x="502" y="269" w="230" h="230"/>
+		<layer className="ui.LayerRankZone" x="502" y="516" w="230" h="463"/>
+		<layer className="ui.LayerTitle" x="521" y="55" w="195" h="68"/>
 	</frame>
 	<system>
 	</system>

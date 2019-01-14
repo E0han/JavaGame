@@ -27,7 +27,7 @@ public class Main {
         GameService service = new GameService(dto);
         //create game control (connect the panel and logic blocks)
         GameControl game = new GameControl(panel,service);
-        //create player's contorl (connect the game control)
+        //create player's control (connect the game control)
         PControl control = new PControl(game);
         panel.setGameControl(control);
         //create the game window, install the game's panel

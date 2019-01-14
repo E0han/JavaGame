@@ -19,10 +19,9 @@ import javax.swing.ImageIcon;
 import dto.GameDto;
 
 public class Layer {
-    private static final int SIZE =7;
-    private static final Image IMG = new ImageIcon("graphics/window/window.png").getImage();
-    private static final int IMGW = IMG.getWidth(null);
-    private static final int IMGH = IMG.getHeight(null);
+    private static final Image Window_IMG = new ImageIcon("graphics/window/window.png").getImage();
+    private static final int IMGW = Window_IMG.getWidth(null);
+    private static final int IMGH = Window_IMG.getHeight(null);
     /**
      * 窗口左上角x坐标
      */
@@ -50,37 +49,12 @@ public class Layer {
         this.w=w;
         this.h=h;
     }
-    /**
-     * 绘制窗口
-     * Description: <br>
-     * 1、…<br>
-     * 2、…<br>
-     * Implement: <br>
-     * 1、…<br>
-     * 2、…<br>
-     *  
-     * @see
-     */
+    
+    //
     public void createWindow(Graphics g) {
       //left-up
-        g.drawImage(IMG,x,y,x + SIZE,y+SIZE,0,0,SIZE,SIZE,null);
-        //middle-up
-        g.drawImage(IMG,x+SIZE,y,x+w-SIZE,y+SIZE,SIZE,0,IMGW-SIZE,SIZE,null);
-        //right-up
-        g.drawImage(IMG,x+w-SIZE,y,x+w,y+SIZE,IMGW - SIZE,0,IMGW,SIZE,null);
-        //left-mid
-        g.drawImage(IMG, x, y+SIZE,x+w-SIZE,y+h-SIZE,0,SIZE,SIZE,IMGH-SIZE,null);
-        //middle
-        g.drawImage(IMG, x+SIZE,y+SIZE,x+w-SIZE,y+h-SIZE,SIZE,SIZE,IMGW-SIZE,IMGH-SIZE,null);
-        //right-mid
-        g.drawImage(IMG,x+w-SIZE,y+SIZE,x+w,y+h-SIZE,IMGW-SIZE,SIZE,IMGW,IMGH-SIZE,null);
-        //left-down
-        g.drawImage(IMG,x,y+h-SIZE,x+SIZE,y+h,0,IMGH-SIZE,SIZE,IMGH,null);
-        //mid-down
-        g.drawImage(IMG,x+SIZE,y+h-SIZE,x+w-SIZE,y+h,SIZE,IMGH-SIZE,IMGW-SIZE,IMGH,null);
-        //right-down
-        g.drawImage(IMG,x+w-SIZE,y+h-SIZE,x+w,y+h,IMGW-SIZE,IMGH-SIZE,IMGW,IMGH,null);
-    }
+        g.drawImage(Window_IMG, x, y, w, h, null);
+}
     
     public void setDto(GameDto dto) {
         this.dto = dto;

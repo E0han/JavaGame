@@ -26,12 +26,6 @@ public class GameControl {
         this.panelGame = panelGame;
         this.gameService = gameService;
     }
-
-
-    public void tests() {
-        this.gameService.gameTest();
-        this.panelGame.repaint();
-    }
     public void keyup() {
         this.gameService.keyup();
         this.panelGame.repaint();
@@ -48,8 +42,6 @@ public class GameControl {
         this.gameService.keyleft();
         this.panelGame.repaint();
     }
-
-
     public void keyright() {
         this.gameService.keyright();
         this.panelGame.repaint();
