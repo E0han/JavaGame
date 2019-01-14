@@ -16,6 +16,8 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
+import dto.GameDto;
+
 public class Layer {
     private static final int SIZE =7;
     private static final Image IMG = new ImageIcon("graphics/window/window.png").getImage();
@@ -37,6 +39,10 @@ public class Layer {
      * ´°¿Ú¸ß¶È
      */
     protected int h;
+    /**
+     * Game's data
+     */
+    protected GameDto dto=null;
     
     public Layer(int x,int y,int w,int h) {
         this.x=x;
@@ -74,6 +80,10 @@ public class Layer {
         g.drawImage(IMG,x+SIZE,y+h-SIZE,x+w-SIZE,y+h,SIZE,IMGH-SIZE,IMGW-SIZE,IMGH,null);
         //right-down
         g.drawImage(IMG,x+w-SIZE,y+h-SIZE,x+w,y+h,IMGW-SIZE,IMGH-SIZE,IMGW,IMGH,null);
+    }
+    
+    public void setDto(GameDto dto) {
+        this.dto = dto;
     }
     /**
      * @author 0han

@@ -15,15 +15,34 @@ import java.awt.Graphics;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JPanel;
+
 import config.ConfigFactory;
 import config.GameConfig;
 import config.LayerConfig;
+import control.PControl;
+import dto.GameDto;
 
 public class PanelGame extends JPanel {
     
     private ArrayList<Layer> lays = null;
-    public PanelGame() {
+    private GameDto dto;
+    
+    public PanelGame(GameDto dto) {
+        this.dto=dto;
+        initLayer();
+        initComponent();
+    }
+    
+    public void setGameControl(PControl control){
+        this.addKeyListener(control);
+    }
+    
+    private void initComponent() {
+    }
+    
+    private void initLayer(){
         try {
         GameConfig cfg = ConfigFactory.getGameConfig();
         List<LayerConfig> layerCfg=cfg.getLayersConfig();
@@ -35,6 +54,7 @@ public class PanelGame extends JPanel {
             Constructor<?> ctr = cls.getConstructor( int.class, int.class, int.class, int.class);
         //用constructor创建对象
             Layer l = (Layer)ctr.newInstance(c.getX(), c.getY(),c.getW(),c.getH());
+            l.setDto(this.dto);
         //将创建的layer对象放入集合
             lays.add(l);
             
@@ -47,18 +67,14 @@ public class PanelGame extends JPanel {
             
         }
      
-//        lays = new Layer[] {
-//            new LayerGame(173,41,246,342),
-//            new LayerDataBase(26,41,119,222),
-//            new LayerButton(446, 41, 119,100),
-//            new LayerDisk(26,284,119,100),
-//            new LayerLevel(446,162,119,222)
-//        };
 
     @Override
     public void paintComponent(Graphics g) {
+        //Use the base class method
+        super.paintComponent(g);
         // refresh the graphics as a fucking crazy loop
         for(int i =0;i<lays.size();lays.get(i++).paint(g));
-        //g.drawImage(img,0,0,null);    
+        //return focus
+        this.requestFocus();
     }
 }

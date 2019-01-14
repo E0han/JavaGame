@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-	<frame width="600" height="450" padding='16' windowSize='7'>
+	<frame title="JavaGame" windowUP="32" width="680" height="1000" padding='16' windowSize='7'>
 		<layer className="ui.LayerDisk" x="26" y="284" w="119" h="100"/>
-		<layer className="ui.LayerGame" x="173" y="41" w="246" h="342"/>
+		<layer className="ui.LayerGame" x="414" y="32" w="334" h="590"/>
 		<layer className="ui.LayerDataBase" x="26" y="41" w="119" h="222"/>
 		<layer className="ui.LayerButton" x="446" y="41" w="119" h="100"/>
 		<layer className="ui.LayerLevel" x="446" y="162" w="119" h="222"/>

@@ -88,4 +88,5 @@ public class GameConfig {
     public List<LayerConfig> getLayersConfig() {
         return layersConfig;
     }
+    
 }
