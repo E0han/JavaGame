@@ -1,6 +1,6 @@
 /*
  * 文件名：GameConfig.java
- * 版权：Copyright by www.newlixon.com/
+ * 版权：Copyright by 0han
  * 描述：
  * 修改人：Administrator
  * 修改时间：2019年1月11日

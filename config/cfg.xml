@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <game>
-	<frame title="JavaGame" windowUP="32" width="750" height="1000" padding='16' windowSize='7'>
+	<frame title="JavaGame" windowUP="32" width="768" height="1024" padding='16' windowSize='7'>
 		<layer className="ui.LayerGame" x="22" y="22" w="461" h="957"/>
 		<layer className="ui.LayerLogo" x="502" y="22" w="230" h="230"/>
 		<layer className="ui.LayerScore" x="502" y="269" w="230" h="230"/>

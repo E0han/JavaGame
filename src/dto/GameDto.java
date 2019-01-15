@@ -24,6 +24,18 @@ public class GameDto {
     private int level;
     private int nowPoint;
     private int nowRemoveline;
+    
+    public GameDto() {
+        dtoInit();
+    }
+    /**
+     * dto initilization
+     */
+    public void dtoInit() {
+        this.gameMap = new boolean[14][29];
+    }
+    
+    
     public List<Player> getDbRecord() {
         return dbRecord;
     }

@@ -25,27 +25,32 @@ public class GameService {
     }
     public void keyup() {
         // TODO Auto-generated method stub
-        if(this.canMove(0,-1)) {
-            this.dto.getGameact().move(0,-1);
-        }
+//        if(this.canMove(0,-1)) {
+//            this.dto.getGameact().move(0,-1);
+//        }
+        this.dto.getGameact().round();
     }
     public void keydown() {
         // TODO Auto-generated method stub
-        if (this.canMove(0,1)) {
-            this.dto.getGameact().move(0,1);
+        if(!this.dto.getGameact().move(0,1)) {
+            boolean[][] map = this.dto.getGameMap();
+            Point[] act = this.dto.getGameact().getActPoint();
+            for (int i = 0; i < act.length; i++ ) {
+                map[act[i].x][act[i].y] = true;
+            }
         }
+        
     }
     public void keyleft() {
         // TODO Auto-generated method stub
-        if(this.canMove(-1,0)) {
+
             this.dto.getGameact().move(-1,0);
-        }
+        
     }
     public void keyright() {
         // TODO Auto-generated method stub
-        if(this.canMove(1,0)) {
-            this.dto.getGameact().move(1,0);
-        }
+       this.dto.getGameact().move(1,0);
+        
     }
     /**
      * 
@@ -56,16 +61,4 @@ public class GameService {
      * @return 
      * @see
      */
-    private boolean canMove(int moveX, int moveY) {
-        Point[] nowPoints = this.dto.getGameact().getActPoint();
-        for (int i = 0; i < nowPoints.length; i++ ) {
-            int newX = nowPoints[i].x + moveX;
-            int newY = nowPoints[i].y + moveY;
-            //TODO Ó²±àÂë
-            if(newX < 0 || newX > 13 || newY < 0 ||newY>28) {
-                return false;
-            }
-        }
-        return true;
-    }
 }

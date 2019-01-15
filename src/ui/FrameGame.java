@@ -27,6 +27,7 @@ public class FrameGame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Size
         this.setSize(cfg.getWidth(),cfg.getHeight());
+        //this.setRealWindowSize();
         //user can not change the size:
         this.setResizable(true);
         //æ”÷–
@@ -34,9 +35,20 @@ public class FrameGame extends JFrame {
         Dimension screenSize = toolkit.getScreenSize();
         int width = screenSize.width;
         int height = screenSize.height;
-        this.setLocation(width/2-350,height/2-250);
+        //this.setLocation(width/2,height/2);
         //æ”÷–end
         this.setContentPane(panelGame);
         this.setVisible(true);
-    } 
+    }
+    
+    private void setRealWindowSize() {
+        /**
+         * ScreenSize updated
+         */
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        double screenWidth = dim.getWidth();
+        double screenHeight = dim.getHeight();
+        this.setSize((int)(screenWidth*0.3),(int)((screenWidth*0.3)/0.75));
+        
+    }
 }
