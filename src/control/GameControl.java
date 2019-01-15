@@ -11,11 +11,16 @@
 
 package control;
 
+import dao.Data;
 import ui.PanelGame;
 
 public class GameControl {
     private PanelGame panelGame;
-    
+    /**
+     * data access implement A
+     */
+    private Data dataA;
+     
     /**
      * ÓÎÏ·Âß¼­²ã
      */

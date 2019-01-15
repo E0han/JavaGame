@@ -42,6 +42,7 @@ public class Layer {
      * Game's data
      */
     protected GameDto dto=null;
+    protected  static final int IMG_RECT_H = Img.RECT.getHeight(null);
     
     public Layer(int x,int y,int w,int h) {
         this.x=x;

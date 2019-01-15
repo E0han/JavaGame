@@ -11,21 +11,34 @@
 
 package ui;
 
+import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
 
 public class LayerRankZone extends Layer{
   //Image Address
-    private static Image IMG_RANKZONE=new ImageIcon("graphics/window/rankZone.png").getImage();
+    private static final int MAX_ROW = 5;
+    private static final int Y0 = 0;
+    private static final int SPA = 0;
     
     public LayerRankZone(int x, int y, int w, int h) {
         super(x,y,w,h);
-    }
+        }
     
     public void paint(Graphics g) {
         this.createWindow(g);
-        g.drawImage(IMG_RANKZONE, this.x, this.y,this.w, this.h,null);
+        g.drawImage(Img.IMG_RANKZONE, this.x, this.y,this.w, this.h,null);
+        drawNumber(g, 1,2);
+    }
+    
+    /**
+     * Display your rank
+     */
+    //TODO Need to resize and font
+    
+    private void drawNumber(Graphics g, int x, int y) {
+        String rankNumber = "0";
+        Font drawFont = new Font("Silom",Font.BOLD,16);
+        g.drawString(rankNumber,this.x+57, this.y);
+          
     }
 }

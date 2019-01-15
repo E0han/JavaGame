@@ -18,14 +18,12 @@ import javax.swing.ImageIcon;
 
 public class LayerLogo extends Layer{
     //Image Address
-    private static Image IMG_LOGO=new ImageIcon("graphics/window/logoZone.png").getImage();
-    
     public LayerLogo(int x, int y, int w, int h) {
         super(x,y,w,h);
     }
     
     public void paint(Graphics g) {
         this.createWindow(g);
-        g.drawImage(IMG_LOGO, this.x, this.y,this.w, this.h,null);
+        g.drawImage(Img.IMG_LOGO, this.x, this.y,this.w, this.h,null);
     }
 }

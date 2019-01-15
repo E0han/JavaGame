@@ -18,7 +18,6 @@ import javax.swing.ImageIcon;
 
 public class LayerTitle extends Layer{
   //Image Address
-    private static Image IMG_LOGO=new ImageIcon("graphics/string/Title.png").getImage();
     
     public LayerTitle(int x, int y, int w, int h) {
         super(x,y,w,h);
@@ -26,6 +25,6 @@ public class LayerTitle extends Layer{
     
     public void paint(Graphics g) {
         this.createWindow(g);
-        g.drawImage(IMG_LOGO, this.x, this.y, this.w, this.h,null);
+        g.drawImage(Img.IMG_LOGO, this.x, this.y, this.w, this.h,null);
     }
 }
