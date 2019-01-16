@@ -24,6 +24,6 @@ public class LayerLogo extends Layer{
     
     public void paint(Graphics g) {
         this.createWindow(g);
-        g.drawImage(Img.IMG_LOGO, this.x, this.y,this.w, this.h,null);
+        //g.drawImage(Img.IMG_LOGO, this.x, this.y,this.w, this.h,null);
     }
 }

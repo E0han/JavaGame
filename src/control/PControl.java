@@ -28,6 +28,9 @@ public class PControl extends KeyAdapter{
     public void keyPressed(KeyEvent e) {
         //TODO 枚举写法不好
         switch (e.getKeyCode()) {
+            case KeyEvent.VK_SPACE:
+                this.gameControl.gameStart();
+                break;
             case KeyEvent.VK_UP:
                 this.gameControl.keyup();
                 break;

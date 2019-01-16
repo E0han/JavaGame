@@ -21,5 +21,7 @@ public class LayerPoint extends Layer {
     }
     public void paint(Graphics g) {
         this.createWindow(g);
+        //g.drawImage(Img.IMG_RANKZONE, this.x, this.y,this.w, this.h,null);
+        
     }
 }

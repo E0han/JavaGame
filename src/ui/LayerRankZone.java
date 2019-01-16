@@ -38,7 +38,7 @@ public class LayerRankZone extends Layer{
     private void drawNumber(Graphics g, int x, int y) {
         String rankNumber = "0";
         Font drawFont = new Font("Silom",Font.BOLD,16);
-        g.drawString(rankNumber,this.x+57, this.y);
+        g.drawString(rankNumber,this.x+125, this.y+75);
           
     }
 }

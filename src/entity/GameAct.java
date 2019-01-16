@@ -1,5 +1,5 @@
 /*
- * 文件名：GameAct.java
+   * 文件名：GameAct.java
  * 版权：Copyright by www.newlixon.com/
  * 描述：
  * 修改人：Administrator
@@ -14,6 +14,7 @@ package entity;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GameAct {
     /**
@@ -40,7 +41,7 @@ public class GameAct {
     }
     public GameAct() {
         //TODO 写入配置文件
-        this.init(0);
+        this.init(new Random().nextInt(6));
         //TODO config
     }
     
@@ -59,6 +60,7 @@ public class GameAct {
     public Point[] getActPoint() {
         return actPoint;
     }
+    
     
     public boolean move(int moveX, int moveY, boolean[][] gameMap) {
         //Move 

@@ -78,4 +78,14 @@ public class GameDto {
     public void setNowRemoveline(int nowRemoveline) {
         this.nowRemoveline = nowRemoveline;
     }
+    private boolean start =false;
+    //TODO need to remove later
+
+    public boolean isStart() {
+        return start;
+    }
+    public void setStart(boolean start) {
+        this.start = start;
+    }
+    
 }
