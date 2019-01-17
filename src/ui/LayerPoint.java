@@ -24,4 +24,11 @@ public class LayerPoint extends Layer {
         //g.drawImage(Img.IMG_RANKZONE, this.x, this.y,this.w, this.h,null);
         
     }
+    /**
+     * This method will print the Score 
+     * as the int value input
+     */
+    public void paintPoint(Graphics g, int Number) {
+        
+    }
 }

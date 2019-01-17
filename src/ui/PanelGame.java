@@ -33,7 +33,7 @@ public class PanelGame extends JPanel {
     public PanelGame(GameControl gameControl, GameDto dto) {
         this.initLayer(dto);
         initComponent();
-        this.setGameControl(new PControl(gameControl));
+        this.setGameControl(new PControl(gameControl, dto));
     }
     
     public void setGameControl(PControl control){

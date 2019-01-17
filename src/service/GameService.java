@@ -16,6 +16,6 @@ public interface GameService {
     public boolean keydown();
     public boolean keyleft();
     public boolean keyright();
-    public void startGame();
+    public void gameStart();
     public void mainAction();
 }

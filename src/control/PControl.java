@@ -14,11 +14,15 @@ package control;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import dto.GameDto;
+
 public class PControl extends KeyAdapter{
     
     private GameControl gameControl;
-    public PControl(GameControl gameControl) {
+    private GameDto dto;
+    public PControl(GameControl gameControl, GameDto dto) {
         this.gameControl = gameControl;
+        this.dto = dto;
     }
     
     /**
@@ -29,14 +33,18 @@ public class PControl extends KeyAdapter{
         //TODO 枚举写法不好
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE:
-                this.gameControl.gameStart();
+                if(!this.dto.isProcessLock()) {
+                    this.gameControl.gameStart();
+                }
                 break;
             case KeyEvent.VK_UP:
                 this.gameControl.keyup();
                 break;
                 
             case KeyEvent.VK_DOWN:
-                this.gameControl.keydown();
+                if(this.dto.isProcessLock()) {
+                    this.gameControl.keydown();
+                }
                 break;
                     
             case KeyEvent.VK_LEFT:

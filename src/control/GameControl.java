@@ -49,28 +49,29 @@ public class GameControl {
 
     
     public void gameStart(){
-        this.gameService.gameStart();
-        this.panelGame.repaint();
-        this.gameThread = new Thread() {
-            @Override
-            public void run() {
-                //Main loop
-                panelGame.repaint();
-                while(true) {
-                    try {
-                        gameService.mainAction();
-                        Thread.sleep(200);
-                        panelGame.repaint();
-                    }
-                    catch (InterruptedException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
+            this.dto.setProcessLock(true);
+            this.gameService.gameStart();
+            this.panelGame.repaint();
+            this.gameThread = new Thread() {
+                @Override
+                public void run() {
+                    //Main loop
+                    panelGame.repaint();
+                    while(true) {
+                        try {
+                            gameService.mainAction();
+                            Thread.sleep(1000);
+                            panelGame.repaint();
+                        }
+                        catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
                     }
                 }
-            }
         };
         //Start the thread
-        this.gameThread.start();
+            this.gameThread.start();
         //
     }
     

@@ -78,6 +78,19 @@ public class GameDto {
     public void setNowRemoveline(int nowRemoveline) {
         this.nowRemoveline = nowRemoveline;
     }
+    /**
+     * When the game runs, processLock on
+     * to prevent player press other buttons
+     * like space during the game
+     */
+    private boolean processLock = false;
+    
+    public boolean isProcessLock() {
+        return processLock;
+    }
+    public void setProcessLock(boolean processLock) {
+        this.processLock = processLock;
+    }
     private boolean start =false;
     //TODO need to remove later
 

@@ -35,8 +35,11 @@ public class GameTeris implements GameService {
     @Override
     public boolean keydown() {
         synchronized (this.dto) {
-            // TODO Auto-generated method stub
             if(this.dto.getGameact().move(0,1,this.dto.getGameMap())) {
+                if(this.isLose()) {
+                    
+                    this.afterLose();
+                }
                 return false;
             }
             // get Game map object
@@ -59,6 +62,7 @@ public class GameTeris implements GameService {
             //check whether fail
             if(this.isLose()) {
                 this.afterLose();
+                return false;
             }
             return true;
         }
@@ -67,11 +71,16 @@ public class GameTeris implements GameService {
 
     private void afterLose() {
         // TODO Auto-generated method stub
-        
+        System.out.println("Loss");
+        this.dto.setStart(false);
+        this.dto.setProcessLock(true);
     }
 
     private boolean isLose() {
-        // TODO Auto-generated method stub
+        if(checkLose()) {
+            this.dto.setProcessLock(true);
+            return true;
+        }
         return false;
     }
     @Override
@@ -87,15 +96,8 @@ public class GameTeris implements GameService {
         }
     }
     
-    public void autoMove() throws Exception {
-        boolean flag=true;
-        while(flag) {
-            Thread.currentThread().sleep(1000);
-            flag=this.dto.getGameact().move(0,1,this.dto.getGameMap());
-        }
-    }
 
-    /**
+    /** 
      * ÏûÐÐ
      * @return 
      */
@@ -142,14 +144,11 @@ public class GameTeris implements GameService {
         }
         return false;
     }
-
+    @Override
     public void gameStart() {
         this.dto.setStart(true);
     }
-    public void startGame() {
-        // TODO Auto-generated method stub
-        
-    }
+
     @Override
     public void mainAction() {
         // TODO Auto-generated method stub
