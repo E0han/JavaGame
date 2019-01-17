@@ -5,7 +5,6 @@
 		<layer className="ui.LayerLogo" x="502" y="22" w="230" h="230"/>
 		<layer className="ui.LayerScore" x="502" y="269" w="230" h="230"/>
 		<layer className="ui.LayerRankZone" x="502" y="516" w="230" h="463"/>
-		<layer className="ui.LayerTitle" x="521" y="55" w="195" h="68"/>
 	</frame>
 	<system>
 	</system>

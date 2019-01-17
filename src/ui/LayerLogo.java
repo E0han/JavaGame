@@ -1,12 +1,12 @@
 /*
- * ÎÄ¼þÃû£ºLayerLogo.java
- * °æÈ¨£ºCopyright by www.newlixon.com/
- * ÃèÊö£º
- * ÐÞ¸ÄÈË£ºAdministrator
- * ÐÞ¸ÄÊ±¼ä£º2019Äê1ÔÂ14ÈÕ
- * ¸ú×Ùµ¥ºÅ£º
- * ÐÞ¸Äµ¥ºÅ£º
- * ÐÞ¸ÄÄÚÈÝ£º
+ * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½LayerLogo.java
+ * ï¿½ï¿½È¨ï¿½ï¿½Copyright by www.newlixon.com/
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Þ¸ï¿½ï¿½Ë£ï¿½Administrator
+ * ï¿½Þ¸ï¿½Ê±ï¿½ä£º2019ï¿½ï¿½1ï¿½ï¿½14ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Ùµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸Äµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½Ý£ï¿½
  */
 
 package ui;
@@ -24,6 +24,6 @@ public class LayerLogo extends Layer{
     
     public void paint(Graphics g) {
         this.createWindow(g);
-        //g.drawImage(Img.IMG_LOGO, this.x, this.y,this.w, this.h,null);
+        g.drawImage(Img.LOGO, this.x, this.y,this.w, this.h,null);
     }
 }
