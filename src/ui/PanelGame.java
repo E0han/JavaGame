@@ -29,10 +29,12 @@ public class PanelGame extends JPanel {
     
     private ArrayList<Layer> lays = null;
     private GameDto dto;
+    public LayerPoint scorePoints=null;
     
     public PanelGame(GameControl gameControl, GameDto dto) {
         this.initLayer(dto);
-        initComponent();
+        this.initComponent();
+        dto.setScorePoint(scorePoints);
         this.setGameControl(new PControl(gameControl, dto));
     }
     
@@ -41,6 +43,9 @@ public class PanelGame extends JPanel {
     }
     
     private void initComponent() {
+        System.out.println("Run onece");
+        scorePoints = new LayerPoint(520, 355, 32, 32);
+        
     }
     
     private void initLayer(GameDto dto){
@@ -73,6 +78,7 @@ public class PanelGame extends JPanel {
         super.paintComponent(g);
         // refresh the graphics as a fucking crazy loop
         for(int i =0;i<lays.size();lays.get(i++).paint(g));
+        this.scorePoints.paint(g);
         //return focus
         this.requestFocus();
     }

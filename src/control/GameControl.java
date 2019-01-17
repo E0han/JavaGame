@@ -15,6 +15,7 @@ import dao.Data;
 import dto.GameDto;
 import service.GameTeris;
 import ui.FrameGame;
+import ui.LayerPoint;
 import ui.PanelGame;
 
 public class GameControl {

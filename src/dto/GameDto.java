@@ -14,6 +14,9 @@ package dto;
 import java.util.List;
 
 import entity.GameAct;
+import ui.Layer;
+import ui.LayerPoint;
+import ui.PanelGame;
 
 public class GameDto {
     
@@ -21,6 +24,7 @@ public class GameDto {
     private List<Player> diskRecord;
     private boolean[][] gameMap;
     private GameAct gameact;
+    private LayerPoint scorePoint;
     private int level;
     private int nowPoint;
     private int nowRemoveline;
@@ -99,6 +103,13 @@ public class GameDto {
     }
     public void setStart(boolean start) {
         this.start = start;
+    }
+
+    public Layer getScorePoint() {
+        return scorePoint;
+    }
+    public void setScorePoint(LayerPoint scorePoint) {
+        this.scorePoint = scorePoint;
     }
     
 }

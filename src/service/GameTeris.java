@@ -14,15 +14,21 @@ package service;
 import java.awt.Point;
 import java.util.Random;
 
+import control.GameControl;
 import dto.GameDto;
 import entity.GameAct;
+import ui.Layer;
+import ui.LayerPoint;
+import ui.PanelGame;
 
 public class GameTeris implements GameService {
     private GameDto dto;
+    private Layer scorePoint;
     public GameTeris(GameDto dto){
         this.dto = dto;
         GameAct act = new GameAct();
         dto.setGameact(act);
+        this.scorePoint=dto.getScorePoint();
     }
     @Override
     public boolean keyup() {
@@ -151,7 +157,6 @@ public class GameTeris implements GameService {
 
     @Override
     public void mainAction() {
-        // TODO Auto-generated method stub
         this.keydown();
     }
 }

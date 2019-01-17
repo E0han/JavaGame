@@ -26,8 +26,7 @@ public class LayerRankZone extends Layer{
     
     public void paint(Graphics g) {
         this.createWindow(g);
-        g.drawImage(Img.IMG_RANKZONE, this.x, this.y,this.w, this.h,null);
-        drawNumber(g, 1,2);
+        g.drawImage(Img.IMG_RANKZONE, this.x , this.y,this.w, this.h,null);
     }
     
     /**
@@ -35,10 +34,4 @@ public class LayerRankZone extends Layer{
      */
     //TODO Need to resize and font
     
-    private void drawNumber(Graphics g, int x, int y) {
-        String rankNumber = "0";
-        Font drawFont = new Font("Silom",Font.BOLD,16);
-        g.drawString(rankNumber,this.x+125, this.y+75);
-          
-    }
 }
