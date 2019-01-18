@@ -16,7 +16,7 @@ import java.awt.Point;
 
 import entity.GameAct;
 public class LayerGame extends Layer {
-    private static int ACT_SIZE = 32;
+    private static int ACT_SIZE = 20;
     
     
     public LayerGame(int x, int y, int w, int h) {
@@ -47,7 +47,7 @@ public class LayerGame extends Layer {
                         this.x + y*ACT_SIZE,
                         this.x + x*ACT_SIZE+ACT_SIZE,
                         this.x + y*ACT_SIZE+ACT_SIZE,
-                    0,0,32,32,null);
+                    0,0,20,20,null);
                 }
             }
         }
@@ -60,7 +60,7 @@ public class LayerGame extends Layer {
                 this.x + points[i].y*ACT_SIZE,
                 this.x + points[i].x*ACT_SIZE+ACT_SIZE,
                 this.x + points[i].y*ACT_SIZE+ACT_SIZE,
-            0,0,32,32,null);
+            0,0,20,20,null);
         }
     }
 }

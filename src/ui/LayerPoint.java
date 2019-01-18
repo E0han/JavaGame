@@ -23,7 +23,7 @@ public class LayerPoint extends Layer {
     }
     public void paint(Graphics g) {
         //this.createWindow(g);
-        drawNumber(this.x, this.y, this.dto.getNowPoint(), g,32);
+        drawNumber(this.x, this.y, this.dto.getNowPoint(), g,20);
     }
     /**
      * This method will print the Score 
