@@ -16,7 +16,7 @@ import java.util.List;
 import entity.GameAct;
 import ui.Layer;
 import ui.LayerPoint;
-import ui.PanelGame;
+import window.PanelGame;
 
 public class GameDto {
     
@@ -25,18 +25,20 @@ public class GameDto {
     private boolean[][] gameMap;
     private GameAct gameact;
     private LayerPoint scorePoint;
-    private int level;
-    private int nowPoint;
+    private int nowPoint; // game point
     private int nowRemoveline;
     
     public GameDto() {
         dtoInit();
+        
     }
     /**
      * dto initilization
      */
     public void dtoInit() {
         this.gameMap = new boolean[14][29];
+        this.nowPoint=0;
+        this.nowRemoveline=0;
     }
     
     
@@ -64,12 +66,7 @@ public class GameDto {
     public void setGameact(GameAct gameact) {
         this.gameact = gameact;
     }
-    public int getLevel() {
-        return level;
-    }
-    public void setLevel(int level) {
-        this.level = level;
-    }
+
     public int getNowPoint() {
         return nowPoint;
     }

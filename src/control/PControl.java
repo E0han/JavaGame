@@ -34,7 +34,7 @@ public class PControl extends KeyAdapter{
         switch (e.getKeyCode()) {
             case KeyEvent.VK_SPACE:
                 if(!this.dto.isProcessLock()) {
-                    this.gameControl.gameStart();
+                    this.gameControl.gameStart(); 
                 }
                 break;
             case KeyEvent.VK_UP:
@@ -54,8 +54,6 @@ public class PControl extends KeyAdapter{
             case KeyEvent.VK_RIGHT:
                 this.gameControl.keyright();
                 break;
-                    
-
             default:
                 break;
         }

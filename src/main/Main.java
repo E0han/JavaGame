@@ -14,12 +14,11 @@ import control.GameControl;
 import control.PControl;
 import dto.GameDto;
 import service.GameTeris;
-import ui.FrameGame;
-import ui.PanelGame;
+import window.FrameGame;
+import window.PanelGame;
 
 public class Main {
     public static void main(String args[]) {
         new GameControl();
- 
     }
 }

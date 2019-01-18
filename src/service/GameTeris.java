@@ -19,11 +19,12 @@ import dto.GameDto;
 import entity.GameAct;
 import ui.Layer;
 import ui.LayerPoint;
-import ui.PanelGame;
+import window.PanelGame;
 
 public class GameTeris implements GameService {
     private GameDto dto;
     private Layer scorePoint;
+    private int exp = 0;
     public GameTeris(GameDto dto){
         this.dto = dto;
         GameAct act = new GameAct();
@@ -43,7 +44,6 @@ public class GameTeris implements GameService {
         synchronized (this.dto) {
             if(this.dto.getGameact().move(0,1,this.dto.getGameMap())) {
                 if(this.isLose()) {
-                    
                     this.afterLose();
                 }
                 return false;
@@ -77,9 +77,8 @@ public class GameTeris implements GameService {
 
     private void afterLose() {
         // TODO Auto-generated method stub
-        System.out.println("Loss");
         this.dto.setStart(false);
-        this.dto.setProcessLock(true);
+        this.dto.setProcessLock(false);
     }
 
     private boolean isLose() {
@@ -101,21 +100,17 @@ public class GameTeris implements GameService {
             return this.dto.getGameact().move(1,0,this.dto.getGameMap());
         }
     }
-    
 
-    /** 
-     * ÏûÐÐ
-     * @return 
-     */
     private int plusPoint() {
         //TODO return exp
         boolean[][] map=this.dto.getGameMap();
-        int exp=0;
+        exp=0;
         for (int y = 0; y < 29; y++ ) {
             if(isCanRemoveLine(y,map)) {
                 this.removeLine(y,map);
                 //TODO plus exp and repaint
-                exp+=100;
+                this.exp+=17;
+                pointsUp();
             }
         }
         return exp;
@@ -153,10 +148,16 @@ public class GameTeris implements GameService {
     @Override
     public void gameStart() {
         this.dto.setStart(true);
+        this.dto.dtoInit();
     }
 
     @Override
     public void mainAction() {
         this.keydown();
+    }
+
+    public void pointsUp() {
+        int nowScore = this.dto.getNowPoint();
+        this.dto.setNowPoint(nowScore+=this.exp);
     }
 }

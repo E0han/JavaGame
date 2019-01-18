@@ -14,9 +14,9 @@ package control;
 import dao.Data;
 import dto.GameDto;
 import service.GameTeris;
-import ui.FrameGame;
 import ui.LayerPoint;
-import ui.PanelGame;
+import window.FrameGame;
+import window.PanelGame;
 
 public class GameControl {
     private PanelGame panelGame;
@@ -35,7 +35,7 @@ public class GameControl {
      *  Data source
      */
     private GameDto dto = null;
-    
+    //private FrameGame frameGame;
 
     public GameControl() {
       //Game data source
@@ -47,36 +47,41 @@ public class GameControl {
         //create the game window, install the game's panel
         new FrameGame(this.panelGame);
     }
-
     
     public void gameStart(){
             this.dto.setProcessLock(true);
+            
+            //
             this.gameService.gameStart();
-            this.panelGame.repaint();
-            this.gameThread = new Thread() {
-                @Override
-                public void run() {
-                    //Main loop
-                    panelGame.repaint();
-                    while(true) {
-                        try {
-                            gameService.mainAction();
-                            Thread.sleep(1000);
-                            panelGame.repaint();
-                        }
-                        catch (InterruptedException e) {
-                            // TODO Auto-generated catch block
-                            e.printStackTrace();
-                        }
-                    }
-                }
-        };
+            this.gameThread = new MainThread();
         //Start the thread
             this.gameThread.start();
         //
-    }
+            this.panelGame.repaint();
+    } 
     
     
+    
+    private class MainThread extends Thread{
+        @Override
+        public void run() {
+            //Main loop
+            while(true) {
+                if(!dto.isStart()) {
+                    break;
+                }
+                try {
+                    Thread.sleep(200);
+                    gameService.mainAction();
+                    panelGame.repaint();
+                }
+                catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }
+}
     
     
     public void keyup() {
@@ -93,7 +98,6 @@ public class GameControl {
         }
     }
 
-
     public void keyleft() {
         this.gameService.keyleft();
         this.panelGame.repaint();
@@ -101,5 +105,8 @@ public class GameControl {
     public void keyright() {
         this.gameService.keyright();
         this.panelGame.repaint();
+    }
+    public void pointsUp() {
+        this.gameService.pointsUp();
     }
 }
