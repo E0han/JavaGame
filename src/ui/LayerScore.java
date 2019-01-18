@@ -24,7 +24,7 @@ public class LayerScore extends Layer{
     }
     
     public void paint(Graphics g) {
-        this.createWindow(g);
+        //this.createWindow(g);
         g.drawImage(Img.IMG_SCORE, this.x, this.y,this.w, this.h,null);
     }
 }

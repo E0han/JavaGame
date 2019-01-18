@@ -49,9 +49,8 @@ public class GameControl {
     }
     
     public void gameStart(){
+        this.dto.setGameLoss(false);
             this.dto.setProcessLock(true);
-            
-            //
             this.gameService.gameStart();
             this.gameThread = new MainThread();
         //Start the thread
@@ -71,7 +70,7 @@ public class GameControl {
                     break;
                 }
                 try {
-                    Thread.sleep(200);
+                    Thread.sleep(150);
                     gameService.mainAction();
                     panelGame.repaint();
                 }

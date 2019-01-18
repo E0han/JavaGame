@@ -11,15 +11,14 @@
 
 package service;
 
+import java.awt.Graphics;
 import java.awt.Point;
 import java.util.Random;
 
-import control.GameControl;
 import dto.GameDto;
 import entity.GameAct;
 import ui.Layer;
-import ui.LayerPoint;
-import window.PanelGame;
+import ui.LayerGameOver;
 
 public class GameTeris implements GameService {
     private GameDto dto;
@@ -79,6 +78,7 @@ public class GameTeris implements GameService {
         // TODO Auto-generated method stub
         this.dto.setStart(false);
         this.dto.setProcessLock(false);
+        this.dto.setGameLoss(true);
     }
 
     private boolean isLose() {

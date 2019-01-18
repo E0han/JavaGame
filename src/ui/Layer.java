@@ -22,7 +22,7 @@ import dto.GameDto;
 
 public class Layer {
     private static final Image Window_IMG = new ImageIcon("graphics/window/window.png").getImage();
-    private static final int IMGW = Window_IMG.getWidth(null);
+    private static final int IMGW = Window_IMG.getWidth(null); 
     private static final int IMGH = Window_IMG.getHeight(null);
     protected static List<Image> NUM_CONFIG;
     static {
@@ -69,10 +69,10 @@ public class Layer {
     }
     
     //
-    public void createWindow(Graphics g) {
-      //left-up
-        g.drawImage(Window_IMG, x, y, w, h, null);
-}
+//    public void createWindow(Graphics g) {
+//      //left-up
+//        g.drawImage(Window_IMG, x, y, w, h, null);
+//}
     
     public void setDto(GameDto dto) {
         this.dto = dto;
@@ -105,7 +105,7 @@ public class Layer {
     /**
      * This version of drawNUmber is for the rank position
      * Input any int as flag to indicate you gonna use this 
-     * rather the one above
+     * rather the one above 
      */
     protected void drawNumber(int x, int y, int num, Graphics g,int p, int flag) {
         String strNum = Integer.toString(num);

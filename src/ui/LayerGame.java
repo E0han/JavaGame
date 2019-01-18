@@ -24,10 +24,12 @@ public class LayerGame extends Layer {
         // TODO Auto-generated constructor stub
     }
     public void paint(Graphics g) {
+        //this.createWindow(g);
+        g.drawImage(Img.GAMEZONE, this.x, this.y,this.w, this.h,null);
         GameAct act = this.dto.getGameact();
         if(this.dto.isStart()) {
             Point[] points = this.dto.getGameact().getActPoint();
-            this.createWindow(g);
+            //this.createWindow(g);
             this.drawActCube(g, points);
         }
         this.drawMap(g);

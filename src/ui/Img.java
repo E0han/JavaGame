@@ -20,11 +20,13 @@ public class Img {
     /**
      * All images used in the project
      */
+    public static Image GAMEZONE=new ImageIcon("graphics/window/window.png").getImage();
     public static Image IMG_SCORE=new ImageIcon("graphics/window/scoreZone.png").getImage();
     public static Image LOGO = new ImageIcon("graphics/window/logoZone.png").getImage();
     public static Image ACT = new ImageIcon("graphics/game/rect.png").getImage();
     public static Image IMG_RANKZONE=new ImageIcon("graphics/window/rankZone.png").getImage();
     public static Image RECT=new ImageIcon("graphics/game/rect.png").getImage();
+    public static Image GAMEOVER=new ImageIcon("graphics/string/gameover.gif").getImage();
     /**
      * Number
      */

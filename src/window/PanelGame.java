@@ -25,6 +25,7 @@ import control.GameControl;
 import control.PControl;
 import dto.GameDto;
 import ui.Layer;
+import ui.LayerGameOver;
 
 public class PanelGame extends JPanel {
     
@@ -47,6 +48,7 @@ public class PanelGame extends JPanel {
     
     private void initLayer(GameDto dto){
         try {
+            this.dto=dto;
             GameConfig cfg = ConfigFactory.getGameConfig();
             List<LayerConfig> layerCfg=cfg.getLayersConfig();
             lays= new ArrayList<Layer>(layerCfg.size());
@@ -75,6 +77,12 @@ public class PanelGame extends JPanel {
         super.paintComponent(g);
         // refresh the graphics as a fucking crazy loop
         for(int i =0;i<lays.size();lays.get(i++).paint(g));
+        if (this.dto.isGameLoss()) {
+            Layer gO=new LayerGameOver(55,407,392,374);
+            gO.paint(g);
+            repaint();
+        }
+        //;
         //return focus
         this.requestFocus();
     }

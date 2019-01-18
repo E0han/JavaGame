@@ -25,8 +25,11 @@ public class GameDto {
     private boolean[][] gameMap;
     private GameAct gameact;
     private LayerPoint scorePoint;
+    private boolean GameLoss;
     private int nowPoint; // game point
     private int nowRemoveline;
+    private boolean start =false;
+
     
     public GameDto() {
         dtoInit();
@@ -92,9 +95,7 @@ public class GameDto {
     public void setProcessLock(boolean processLock) {
         this.processLock = processLock;
     }
-    private boolean start =false;
-    //TODO need to remove later
-
+    
     public boolean isStart() {
         return start;
     }
@@ -107,6 +108,12 @@ public class GameDto {
     }
     public void setScorePoint(LayerPoint scorePoint) {
         this.scorePoint = scorePoint;
+    }
+    public boolean isGameLoss() {
+        return GameLoss;
+    }
+    public void setGameLoss(boolean gameLoss) {
+        GameLoss = gameLoss;
     }
     
 }

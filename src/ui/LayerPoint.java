@@ -22,7 +22,7 @@ public class LayerPoint extends Layer {
         super(x, y, w, h);
     }
     public void paint(Graphics g) {
-        this.createWindow(g);
+        //this.createWindow(g);
         drawNumber(this.x, this.y, this.dto.getNowPoint(), g,32);
     }
     /**
