@@ -1,12 +1,12 @@
 /*
- * ÎÄ¼þÃû£ºGameControl.java
- * °æÈ¨£ºCopyright by www.newlixon.com/
- * ÃèÊö£º
- * ÐÞ¸ÄÈË£ºAdministrator
- * ÐÞ¸ÄÊ±¼ä£º2019Äê1ÔÂ14ÈÕ
- * ¸ú×Ùµ¥ºÅ£º
- * ÐÞ¸Äµ¥ºÅ£º
- * ÐÞ¸ÄÄÚÈÝ£º
+ * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½GameControl.java
+ * ï¿½ï¿½È¨ï¿½ï¿½Copyright by www.newlixon.com/
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Þ¸ï¿½ï¿½Ë£ï¿½Administrator
+ * ï¿½Þ¸ï¿½Ê±ï¿½ä£º2019ï¿½ï¿½1ï¿½ï¿½14ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Ùµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸Äµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½Ý£ï¿½
  */
 
 package control;
@@ -25,7 +25,7 @@ public class GameControl {
      */
     private Data dataA;
     /**
-     * ÓÎÏ·Âß¼­²ã
+     * ï¿½ï¿½Ï·ï¿½ß¼ï¿½ï¿½ï¿½
      */
     private GameTeris gameService;
     //the game auto run thread
@@ -49,14 +49,15 @@ public class GameControl {
     }
     
     public void gameStart(){
-        this.dto.setGameLoss(false);
-            this.dto.setProcessLock(true);
-            this.gameService.gameStart();
-            this.gameThread = new MainThread();
+    	this.dto.setCoverImgShown(false);//the cover image disappear
+        this.dto.setGameLoss(false);//player in the game, not fail yet
+        this.dto.setProcessLock(true);//now the space key cannot use
+        this.gameService.gameStart();//game start
+        this.gameThread = new MainThread();//start main thread
         //Start the thread
-            this.gameThread.start();
+        this.gameThread.start();
         //
-            this.panelGame.repaint();
+        this.panelGame.repaint();
     } 
     
     

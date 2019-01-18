@@ -16,7 +16,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Img {
-    private Img() {}
+	private Img() {}
     /**
      * All images used in the project
      */
@@ -27,6 +27,7 @@ public class Img {
     public static Image IMG_RANKZONE=new ImageIcon("graphics/window/rankZone.png").getImage();
     public static Image RECT=new ImageIcon("graphics/game/rect.png").getImage();
     public static Image GAMEOVER=new ImageIcon("graphics/string/gameover.gif").getImage();
+    public static Image GAMECOVER=new ImageIcon("graphics/string/gamecover.gif").getImage();
     /**
      * Number
      */

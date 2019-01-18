@@ -1,12 +1,12 @@
 /*
- * ÎÄ¼þÃû£ºPanelGame.java
- * °æÈ¨£ºCopyright by www.newlixon.com/
- * ÃèÊö£º
- * ÐÞ¸ÄÈË£ºAdministrator
- * ÐÞ¸ÄÊ±¼ä£º2019Äê1ÔÂ10ÈÕ
- * ¸ú×Ùµ¥ºÅ£º
- * ÐÞ¸Äµ¥ºÅ£º
- * ÐÞ¸ÄÄÚÈÝ£º
+ * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½PanelGame.java
+ * ï¿½ï¿½È¨ï¿½ï¿½Copyright by www.newlixon.com/
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Þ¸ï¿½ï¿½Ë£ï¿½Administrator
+ * ï¿½Þ¸ï¿½Ê±ï¿½ä£º2019ï¿½ï¿½1ï¿½ï¿½10ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Ùµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸Äµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½Ý£ï¿½
  */
 
 package window;
@@ -25,7 +25,7 @@ import control.GameControl;
 import control.PControl;
 import dto.GameDto;
 import ui.Layer;
-import ui.LayerGameOver;
+import ui.LayerGameCover;
 
 public class PanelGame extends JPanel {
     
@@ -53,14 +53,14 @@ public class PanelGame extends JPanel {
             List<LayerConfig> layerCfg=cfg.getLayersConfig();
             lays= new ArrayList<Layer>(layerCfg.size());
             for(LayerConfig c : layerCfg) {
-            //·´Éä£º»ñµÃÀà¶ÔÏó
+            //ï¿½ï¿½ï¿½ä£ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Class<?> cls = Class.forName(c.getClassName());
-            //»ñµÃ¹¹Ôìº¯Êý constructor
+            //ï¿½ï¿½Ã¹ï¿½ï¿½ìº¯ï¿½ï¿½ constructor
                 Constructor<?> ctr = cls.getConstructor( int.class, int.class, int.class, int.class);
-            //ÓÃconstructor´´½¨¶ÔÏó
+            //ï¿½ï¿½constructorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 Layer l = (Layer)ctr.newInstance(c.getX(), c.getY(),c.getW(),c.getH());
                 l.setDto(dto);
-            //½«´´½¨µÄlayer¶ÔÏó·ÅÈë¼¯ºÏ
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½layerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¼¯ï¿½ï¿½
                 lays.add(l);
             
             }
@@ -77,9 +77,13 @@ public class PanelGame extends JPanel {
         super.paintComponent(g);
         // refresh the graphics as a fucking crazy loop
         for(int i =0;i<lays.size();lays.get(i++).paint(g));
+        LayerGameCover gO=new LayerGameCover(27,150,256,244);
+        if (this.dto.isCoverImgShown()) {
+        	gO.startPaint(g);
+        	repaint();
+        }
         if (this.dto.isGameLoss()) {
-            Layer gO=new LayerGameOver(55,407,392,374);
-            gO.paint(g);
+            gO.overPaint(g);
             repaint();
         }
         //;

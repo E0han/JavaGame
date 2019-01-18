@@ -1,12 +1,12 @@
 /*
- * ÎÄ¼þÃû£ºGameDto.java
- * °æÈ¨£ºCopyright by www.newlixon.com/
- * ÃèÊö£º
- * ÐÞ¸ÄÈË£ºAdministrator
- * ÐÞ¸ÄÊ±¼ä£º2019Äê1ÔÂ14ÈÕ
- * ¸ú×Ùµ¥ºÅ£º
- * ÐÞ¸Äµ¥ºÅ£º
- * ÐÞ¸ÄÄÚÈÝ£º
+ * ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½GameDto.java
+ * ï¿½ï¿½È¨ï¿½ï¿½Copyright by www.newlixon.com/
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½Þ¸ï¿½ï¿½Ë£ï¿½Administrator
+ * ï¿½Þ¸ï¿½Ê±ï¿½ä£º2019ï¿½ï¿½1ï¿½ï¿½14ï¿½ï¿½
+ * ï¿½ï¿½ï¿½Ùµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸Äµï¿½ï¿½Å£ï¿½
+ * ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½Ý£ï¿½
  */
 
 package dto;
@@ -29,6 +29,7 @@ public class GameDto {
     private int nowPoint; // game point
     private int nowRemoveline;
     private boolean start =false;
+    private boolean coverImgShown=true;
 
     
     public GameDto() {
@@ -36,7 +37,7 @@ public class GameDto {
         
     }
     /**
-     * dto initilization
+     * dto initialization
      */
     public void dtoInit() {
         this.gameMap = new boolean[14][29];
@@ -115,5 +116,11 @@ public class GameDto {
     public void setGameLoss(boolean gameLoss) {
         GameLoss = gameLoss;
     }
+	public boolean isCoverImgShown() {
+		return coverImgShown;
+	}
+	public void setCoverImgShown(boolean coverImgShown) {
+		this.coverImgShown = coverImgShown;
+	}
     
 }

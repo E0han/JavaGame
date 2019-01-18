@@ -1,9 +1,5 @@
-/.DS_Store
-/config/
-/control/
-/dao/
-/dto/
-/entity/
-/main/
-/service/
+/window/
 /ui/
+/service/
+/dto/
+/control/

@@ -11,7 +11,7 @@ public class FrameGame extends JFrame {
     public FrameGame(PanelGame panelGame){
         GameConfig cfg = ConfigFactory.getGameConfig();
      // Title
-        this.setTitle("Tetris by 0han[DEBUG]");
+        this.setTitle("Tetris1984");
         //Default close
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Size
@@ -19,13 +19,13 @@ public class FrameGame extends JFrame {
         //this.setRealWindowSize();
         //user can not change the size:
         this.setResizable(true);
-        //¾ÓÖÐ
+        //ï¿½ï¿½ï¿½ï¿½
         Toolkit toolkit = Toolkit.getDefaultToolkit(); 
         Dimension screenSize = toolkit.getScreenSize();
         int width = screenSize.width;
         int height = screenSize.height;
         //this.setLocation(width/2,height/2);
-        //¾ÓÖÐend
+        //ï¿½ï¿½ï¿½ï¿½end
         this.setContentPane(panelGame);
         this.setVisible(true);
     }
