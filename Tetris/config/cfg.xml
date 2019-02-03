@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game>
+	<frame title="JavaGame" windowUP="32" width="510" height="650" padding='16' windowSize='7'>
+		<layer className="ui.LayerGame" x="16" y="16" w="280" h="580"/>
+		<layer className="ui.LayerLogo" x="314" y="16" w="169" h="169"/>
+		<layer className="ui.LayerScore" x="314" y="194" w="169" h="109"/>
+		<layer className="ui.LayerRankZone" x="314" y="321" w="169" h="275"/>
+		<layer className="ui.LayerPoint" x="337" y="255" w="20" h="20"/>
+	</frame>
+	<system>
+	</system>
+	<data>
+	
+	</data>
+</game>

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: main.Main
+Class-Path: . Ext/dom4j-2.1.1.jar.jar
+Created-By: 0han@ethyang.com
